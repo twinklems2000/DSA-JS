@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    class Stack_Reverse {
+        arrStack = []
+        currentSize;
+        // str = "pihoo"
+        removedEle
+        constructor() {
+            this.currentSize = this.arrStack.length
+            // this.str.split("")
+        }
+
+        push(newVal) {
+            this.arrStack[this.currentSize] = newVal
+            this.currentSize++
+        }
+
+        pop() {
+            this.removedEle = this.arrStack[this.currentSize - 1]
+            this.currentSize -= 1
+            this.arrStack.length = this.currentSize
+            return this.removedEle
+        }
+
+        reverseStr(item) {
+            console.log(item)
+            for (let i = 0; i < str.length; i++) {
+                this.push(item[i])
+            }
+            for (let i = 0; i < str.length; i++) {
+                item[i] = this.pop()
+            }
+
+        }
+
+
+    }
+
+    let str = "pihoo"
+    str = str.split("")
+    st = new Stack_Reverse()
+    st.reverseStr(str)
+    // str = str.join(" ")
+    console.log(str.join(""))
+</script>
+
+<body>
+    <h1>Reverse String with Stack using Class....</h1>
+</body>
+
+</html>

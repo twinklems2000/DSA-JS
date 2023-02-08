@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    let arrQueue = []
+    currentSize = arrQueue.length
+    max = 5
+
+    function enqueue(newVal) {
+        if (currentSize < max) {
+            arrQueue[currentSize] = newVal
+            currentSize++
+        }
+        else {
+            alert("Queue is full you can not add " + newVal)
+        }
+    }
+
+    function dequeue() {
+        if (currentSize <= 0) {
+            alert("Queue is already empty")
+        }
+        else {
+            for (let i = 0; i < arrQueue.length; i++) {
+                arrQueue[i] = arrQueue[i + 1]
+            }
+            currentSize -= 1
+            arrQueue.length = currentSize
+        }
+    }
+
+    // enqueue(12)
+    // enqueue(9)
+    // dequeue()
+    // enqueue(20)
+    console.log(arrQueue)
+</script>
+
+<body>
+    <h1>Queue , Enqueue, Dnqueue</h1>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let items = [20, 12, 45, 7, 33, 100]
+        const selectionSort = (data) => {
+            for (let i = 0; i < data.length; i++) {
+                let minId = i
+                for (let j = i + 1; j < data.length; j++) {
+                    if (data[j] < data[minId]) {
+                        minId = j
+                    }
+                }
+                let temp = data[minId]
+                data[minId] = data[i]
+                data[i] = temp
+            }
+            console.log(data)
+        }
+        selectionSort(items)
+    </script>
+</head>
+
+<body>
+    <h1>Selection Sort</h1>
+</body>
+
+</html>

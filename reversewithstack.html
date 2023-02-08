@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<script>
+    let arrStack = []
+    currentSize = 0;
+
+    function push(newVal) {
+        arrStack[currentSize] = newVal
+        currentSize++
+    }
+
+    function pop() {
+        let removedElement = arrStack[currentSize - 1]
+        currentSize -= 1
+        arrStack.length = currentSize
+        return removedElement
+    }
+
+    function replaceStr(item) {
+        for (let i = 0; i <= str.length - 1; i++) {
+            push(item[i])
+        }
+        for (let i = 0; i <= str.length - 1; i++) {
+            item[i] = pop()
+        }
+    }
+
+    let str = "Kuhu"
+    str = str.split("")
+
+    replaceStr(str)
+    console.log(str.join(""))
+
+</script>
+
+<body>
+    <h1>Reverse string with stack...</h1>
+</body>
+
+</html>

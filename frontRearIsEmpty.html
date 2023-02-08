@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    let arrQueue = []
+    currentSize = arrQueue.length
+    max = 5
+
+    function enqueue() {
+        let newVal = document.getElementById("newEle").value
+        if (currentSize < max) {
+            arrQueue[currentSize] = newVal
+            currentSize++
+        }
+        else {
+            alert("Queue is full")
+
+        }
+        document.getElementById("newEle").value = ""
+    }
+
+    function dequeue() {
+        if (isEmpty()) {
+            alert("queue is already empty")
+        }
+        else {
+            for (let i = 0; i <= currentSize; i++) {
+                arrQueue[i] = arrQueue[i + 1]
+            }
+            currentSize -= 1
+            arrQueue.length = currentSize
+        }
+    }
+
+    function front() {
+        if (isEmpty()) {
+            alert("queue is already empty")
+        }
+        else {
+            console.log(arrQueue[0])
+        }
+    }
+
+    function rear() {
+        if (isEmpty()) {
+            alert("queue is already empty")
+        }
+        else {
+            // return arrQueue[currentSize - 1]
+            console.log(arrQueue[currentSize - 1])
+        }
+    }
+
+    function isEmpty() {
+        if (currentSize < 0) {
+            return true
+        }
+        else {
+            return false
+        }
+    }
+
+    function display() {
+        console.log(arrQueue)
+    }
+
+</script>
+
+<body>
+    <input type="text" placeholder="Enter new element" id="newEle">
+    <button onclick="enqueue()">Add to Queue</button>
+    <button onclick="dequeue()">Remove from Queue</button>
+    <button onclick="front()">Front Value</button>
+    <button onclick="rear()">Rear Value</button>
+    <button onclick="display()">Show Queue</button>
+</body>
+
+</html>

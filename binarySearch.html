@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+
+    // Iterative way for binary search
+
+    let data = [4, 8, 11, 34, 49, 66]
+    let find = 66
+    let start = 0
+    let end = data.length - 1
+    let position = undefined
+
+    while (start <= end) {
+        let mid = Math.floor((start + end) / 2)
+        if (data[mid] === find) {
+            position = mid
+            break
+        }
+        else if (data[mid] < find) {
+            start = mid + 1
+        }
+        else {
+            end = mid - 1
+        }
+    }
+    console.log(position)
+</script>
+
+<body>
+    <h1>Binary Search Algorithm with array</h1>
+</body>
+
+</html>

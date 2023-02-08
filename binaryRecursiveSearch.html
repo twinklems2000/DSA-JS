@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    let data = [12, 22, 29, 37, 53, 61, 77, 87]
+    let start = 0
+    let end = data.length - 1
+    let position = undefined
+    let find = 77
+
+    function recursiveBinary(data, startPoint, endPoint) {
+        let mid = Math.floor((startPoint + endPoint) / 2)
+        if (data[mid] === find) {
+            position = mid
+            return true
+        }
+        else if (data[mid] < find) {
+            recursiveBinary(data, mid + 1, end)
+        }
+        else {
+            recursiveBinary(data, startPoint, endPoint - 1)
+        }
+    }
+
+    recursiveBinary(data, start, end)
+    console.log(position)
+</script>
+
+<body>
+    <h1>Binary search using recursive way</h1>
+</body>
+
+</html>

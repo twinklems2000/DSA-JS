@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    class Stack {
+        arrStack = []
+        currentSize;
+        max;
+
+        constructor() {
+            this.currentSize = this.arrStack.length
+            this.max = 5
+        }
+        push(newVal) {
+            if (this.currentSize >= this.max) {
+                alert("Your stack is already full you can not add " + newVal)
+            }
+            else {
+                this.arrStack[this.currentSize] = newVal
+                this.currentSize++
+            }
+        }
+        pop() {
+            if (this.currentSize > 0) {
+                this.currentSize -= 1
+                this.arrStack.length = this.currentSize
+            }
+            else {
+                alert("your stack is already empty....")
+            }
+        }
+        display() {
+            console.log(this.arrStack)
+        }
+    }
+
+    st = new Stack()
+    // st.push(25)
+    st.display()
+</script>
+
+<body>
+    <h1>Stack methods using class....</h1>
+</body>
+
+</html>
