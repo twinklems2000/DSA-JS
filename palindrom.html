@@ -1,0 +1,40 @@
+<!-- the string which ramain same after we reverse it is called palindrom string
+ex:  level, pop -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<script>
+    // const isPalindrom = (str) => {
+    //     return str == str.split("").reverse().join("")
+    // }
+
+    const isPalindrom = (data) => {
+        let start = 0;
+        let end = data.length - 1
+        let result = true
+        while (end > start) {
+            if (data[start] != data[end]) {
+                result = false
+            }
+            start++
+            end--
+
+        }
+        return result
+    }
+    console.log(isPalindrom("level"))
+</script>
+
+<body>
+    <h1>palindrom</h1>
+</body>
+
+</html>

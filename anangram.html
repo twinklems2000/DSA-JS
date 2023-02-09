@@ -1,0 +1,44 @@
+<!-- Anagram strings are two strings built up by the same set of characters , where the order of character is the only
+difference between the strings 
+
+ex: SILENT = LISTEN, HEART = EARTH -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const isAnagram = (str1, str2) => {
+            if (str1.length === str2.length) {
+                let object1 = {}
+                for (char of str1) {
+                    // console.log(char)
+                    object1[char] = (object1[char] || 0) + 1
+                }
+                // console.log(object1)
+                for (char of str2) {
+                    // console.log(object1[char])
+                    if (!object1[char]) {
+                        return false
+                    }
+                    object1[char]--
+                }
+                return true
+            }
+
+        }
+
+        console.log(isAnagram("twinkle", "wtinkle"))
+        // console.log(isAnagram("hello", "olehl"))
+    </script>
+</head>
+
+<body>
+    <h1>Anagram </h1>
+</body>
+
+</html>
