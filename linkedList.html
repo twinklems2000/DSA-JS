@@ -13,8 +13,8 @@
             this.head = {
                 value: data,
                 next: null
-            }
-            this.tail = this.head
+            },
+                this.tail = this.head
             this.size = 1
         }
 
@@ -29,9 +29,10 @@
         }
 
         traversing() {
-            let counter = 1
+            let counter = 0
             let currentNode = this.head
-            while (counter <= this.size) {
+
+            while (counter < this.size) {
                 console.log(currentNode)
                 currentNode = currentNode.next
                 counter++
@@ -41,17 +42,67 @@
         deleteNode(index) {
             let counter = 1
             let leadNode = this.head
+
             if (index === 1) {
-                this.head = his.head.next
+                this.head = this.head.next
             }
             else {
                 while (counter < index - 1) {
                     leadNode = leadNode.next
                     counter++
                 }
-                let nextNode = leadNode.next.next
-                leadNode.next = nextNode
+                let newNode = leadNode.next.next
+                leadNode.next = newNode
             }
+        }
+
+        // Insert node at particular index
+
+        insertNode(index, data) {
+            let currentNode = this.head
+            let counter = 1
+
+            while (counter > index) {
+                counter++;
+                currentNode = currentNode.next
+            }
+            let nextNode = currentNode.next
+            currentNode.next = {
+                value: data,
+                next: nextNode
+            }
+            this.size += 1
+        }
+
+        searchNode(data) {
+            let result = undefined
+            let loop = true
+            let leadNode = this.head
+            while (loop) {
+                leadNode = leadNode.next
+                if (loop && leadNode.value === data) {
+                    loop = false
+                    result = leadNode
+                }
+            }
+            console.log(result)
+        }
+
+        searchIndex(index) {
+            let result = undefined
+            let counter = 0
+            let leadNode = this.head
+            let loop = true
+            while (loop) {
+                console.log(counter)
+                leadNode = leadNode.next
+                if (loop && counter === index) {
+                    result = leadNode
+                    loop = false
+                }
+                counter++
+            }
+            console.log(result)
         }
     }
 
@@ -62,12 +113,15 @@
     list.appendData(50)
     list.appendData(60)
     list.traversing()
-    list.deleteNode(3)
+    // list.deleteNode(3)
+    list.insertNode(2, 555)
+    list.searchNode(60)
+    list.searchIndex(0)
     console.log(list)
 </script>
 
 <body>
-    <h1>Linked List </h1>
+    <h1>Linked List with ADD, TRAVERSE AND DELETE NODE</h1>
 </body>
 
 </html>
